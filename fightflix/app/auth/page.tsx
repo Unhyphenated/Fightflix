@@ -1,3 +1,5 @@
+import Input from "@/app/components/Input";
+
 export default function Page() {
     return (
         <div className="relative h-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -10,6 +12,9 @@ export default function Page() {
                         <h2 className="text-white text-4xl mb-8 font-semibold">
                             Sign In
                         </h2>
+                        <div className="flex flex-col gap-4">
+                            <Input />
+                        </div>
                     </div>
                 </div>
             </div>
