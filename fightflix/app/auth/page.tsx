@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useState } from "react";
 import Input from "@/app/components/Input";
+import axios from 'axios'
 
 export default function Page() {
     const [email, setEmail] = useState('');
@@ -11,7 +12,8 @@ export default function Page() {
 
     const toggleVariant = useCallback(() => {
         setVariant((currentVariant) => currentVariant === "login" ? "register" : "login");
-    }, [])
+    }, []);
+
 
     return (
         <div className="relative h-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
