@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useState } from "react";
 import Input from "@/app/components/Input";
-import axios from 'axios'
+import axios from 'axios';
 
 export default function Page() {
     const [email, setEmail] = useState('');
@@ -14,6 +14,17 @@ export default function Page() {
         setVariant((currentVariant) => currentVariant === "login" ? "register" : "login");
     }, []);
 
+    const register = useCallback(async () => {
+        try {
+            await axios.post('/api/register', {
+                email,
+                name,
+                password
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }, [])
 
     return (
         <div className="relative h-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
