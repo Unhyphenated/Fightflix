@@ -91,6 +91,7 @@ export default function Page() {
                                 className="
                                 w-10
                                 h-10
+                                mr-4
                                 bg-white
                                 rounded-full
                                 flex
