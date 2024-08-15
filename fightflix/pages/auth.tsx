@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useState } from "react";
-import Input from "@/app/components/Input";
+import Input from "@/components/Input";
 import axios from 'axios';
 import {signIn} from 'next-auth/react';
 import { useRouter } from "next/navigation";
