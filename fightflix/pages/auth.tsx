@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
-export default function Page() {
+const Auth = () => {
     const router = useRouter();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -132,3 +132,4 @@ export default function Page() {
         </div>
     )
 }
+export default Auth;
