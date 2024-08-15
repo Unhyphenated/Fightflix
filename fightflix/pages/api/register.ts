@@ -1,12 +1,13 @@
 import bcrypt from 'bcrypt';
-import { NextResponse } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
 import prismadb from '@/lib/prismadb';
 
-export async function POST(req: Request) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    if (req.method !== "POST") {
+        return res.status(405).end();
+    }
     try {
-        const { email, name, password } = await req.json();
-        const users = await prismadb.user.findMany();
-        console.log(users); 
+        const { email, name, password } = await req.body;
 
         // Check if the user already exists
         const existingUser = await prismadb.user.findUnique({
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
         });
 
         if (existingUser) {
-            return NextResponse.json({ error: 'Email taken' }, { status: 422 });
+            return res.status(422).json({ error: 'Email taken' })
         }
 
         // Hash the password and create a new user
@@ -29,10 +30,9 @@ export async function POST(req: Request) {
             },
         });
 
-        console.log('User created:', user);
-        return NextResponse.json(user, { status: 200 });
+        return res.status(200).json(user);
     } catch (error) {
         console.error('Error during registration:', error);
-        return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
+        return res.status(400).end();
     }
 }
