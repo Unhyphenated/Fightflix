@@ -1,7 +1,16 @@
+import { useCallback, useState } from "react";
+import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
 
+
 const Navbar = () => {
+    const [showMobileMenu, setShowMobileMneu] = useState(false);
+
+    const toggleMobileMenu = useCallback(() => {
+        setShowMobileMneu((current) => !current);
+    }, [])
+    
     return (
         <div className="w-full fixed z-40">
             <div className="
@@ -34,9 +43,10 @@ const Navbar = () => {
                     <NavbarItem label="Welterweight"/>
 
                 </div>
-                <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+                <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
                     <p className="text-white text-sm">Browse</p>
                     <BsChevronDown className="text-white transition"/>
+                    <MobileMenu visible={showMobileMenu}/>
                 </div>
             </div>
         </div>
