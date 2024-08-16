@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
+import { CiBellOn, CiSearch } from "react-icons/ci";
 
 
 const Navbar = () => {
@@ -53,6 +53,10 @@ const Navbar = () => {
                         <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
                             <CiSearch/>
                         </div>
+                        <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+                            <CiBellOn/>
+                        </div>
+                        
                     </div>
                 </div>
         </nav>
