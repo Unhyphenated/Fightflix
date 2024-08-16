@@ -1,4 +1,5 @@
 import NavbarItem from "./NavbarItem";
+import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = () => {
     return (
@@ -32,6 +33,10 @@ const Navbar = () => {
                     <NavbarItem label="Featherweight"/>
                     <NavbarItem label="Welterweight"/>
 
+                </div>
+                <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+                    <p className="text-white text-sm">Browse</p>
+                    <BsChevronDown className="text-white transition"/>
                 </div>
             </div>
         </div>
