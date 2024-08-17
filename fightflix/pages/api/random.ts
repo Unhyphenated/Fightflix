@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Return the video ID and other relevant info
         res.status(200).json({
             videoId: randomVideo.snippet.resourceId.videoId,
-            videoURL: videoUrl,
+            videoUrl: videoUrl,
             title: randomVideo.snippet.title,
             description: randomVideo.snippet.description,
             thumbnail: randomVideo.snippet.thumbnails.high.url,
