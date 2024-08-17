@@ -1,4 +1,5 @@
 import React from "react";
+import { IoPlay } from "react-icons/io5";
 
 interface FightCardProps {
     data: Record<string, any>
@@ -51,6 +52,37 @@ const FightCard: React.FC<FightCardProps> = ({
                         w-full
                     "
                     src={data.thumbnailUrl} alt="Thumbnail"/>
+                    <div className="
+                    z-10
+                    bg-black
+                    p-2
+                    lg:p-4
+                    absolute
+                    w-full
+                    transition
+                    shadow-md
+                    rounded-b-md"
+                    >
+                        <div className="flex flex-row items-center gap-3">
+                            <div className="
+                            cursor-pointer
+                            w-6
+                            h-6
+                            lg:w-10
+                            lg:h-10
+                            bg-white
+                            rounded-full
+                            flex
+                            justify-center
+                            items-center
+                            transition
+                            hover:bg-neutral-300"
+                            onClick={() => {}}>
+                                <IoPlay size={30}/>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
     )
