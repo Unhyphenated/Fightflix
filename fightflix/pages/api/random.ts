@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY; // Store your API key in an environment variable
-const PLAYLIST_ID = 'PL9m3-_Hv6qNhVCCmgvVd8oRU_5yeszfUt';
+const PLAYLIST_ID = 'PLIiI4TlOInddoahztyfa0PFXKCjZ_GLpp';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
