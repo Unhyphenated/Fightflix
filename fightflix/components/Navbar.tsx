@@ -67,7 +67,7 @@ const Navbar = () => {
                             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
                                 <img src="/images/c_oliveira.png" alt="profile"></img>
                             </div>
-                            <BsChevronDown className="text-white transition"/>
+                            <BsChevronDown className={`text-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`}/>
                             <AccountMenu visible={showAccountMenu}/>
                         </div>
                     </div>
