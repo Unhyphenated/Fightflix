@@ -1,5 +1,6 @@
 import React from "react";
 import { isEmpty } from 'lodash';
+import FightCard from "./FightCard";
 
 interface FightListProps {
     data: Record<string, any>[],
@@ -14,7 +15,7 @@ const FightList: React.FC<FightListProps> = ({ data, title }) => {
                 <p className="text-white md md:text-xl lg:text-2xl font-semibold mb-4">
                     {title}
                 </p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-8 gap-2">
                     {data.map((fight) => (
                         <FightCard key={fight.id} data={fight}/>
                     ))}
