@@ -80,7 +80,7 @@ const FightCard: React.FC<FightCardProps> = ({
                             onClick={() => {}}>
                                 <IoPlay size={30}/>
                             </div>
-                            <FavoriteButton fightId={data?.fightId}/>
+                            <FavoriteButton fightId={data?.id}/>
                         </div>
                     </div>
                 </div>
