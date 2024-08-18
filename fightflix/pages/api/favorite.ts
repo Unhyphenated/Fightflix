@@ -7,7 +7,7 @@ import serverAuth from "@/lib/serverAuth";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try { 
-        if (req.method !== 'POST') {
+        if (req.method === 'POST') {
             const { currentUser } = await serverAuth(req);
             const { fightId } = req.body;
             const existingFight = await prismadb.fight.findUnique( {
@@ -30,6 +30,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 }
             })
             return res.status(200).json(user);
+        }
+
+        if (req.method === 'DELETE') {
+            const { currentUser } = await serverAuth(req);
+            const { fightId } = req.body;
+            const existingFight = await prismadb.fight.findUnique( {
+                where: {
+                    id: fightId,
+                }
+            });
+            
+            if (!existingFight) {
+                throw new Error('Invalid ID');
+            };
+
+            const updatedFavoriteIds = without(currentUser.favoriteIds, fightId);
+            const updatedUser = await prismadb.user.update({
+                where: {
+                    email: currentUser.email || '',
+                },
+                data: {
+                    favoriteIds: updatedFavoriteIds,
+                }
+            });
+            return res.status(200).json(updatedUser);
         }
     } catch (error) {
         console.log(error);
