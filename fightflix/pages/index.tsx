@@ -1,9 +1,11 @@
 import Billboard from "@/components/Billboard";
 import FightList from "@/components/FightList";
+import InfoModal from "@/components/InfoModal";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useFavorites from "@/hooks/useFavorites";
 import useFightsList from "@/hooks/useFightsList";
+import useInfoModal from "@/hooks/useInfoModal";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 
@@ -26,9 +28,11 @@ export async function getServerSideProps(context: NextPageContext) {
 export default function Home() {
   const { data: fights = []} = useFightsList();
   const { data: favorites = []} = useFavorites();
+  const { isOpen, closeModal } = useInfoModal();
 
   return (
     <>
+      <InfoModal visible={isOpen} onClose={() => {}}/>
       <Navbar/>
       <Billboard/>
       <div className="pb-40">
