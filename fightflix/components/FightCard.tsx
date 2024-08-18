@@ -1,5 +1,6 @@
 import React from "react";
 import { IoPlay } from "react-icons/io5";
+import FavoriteButton from "./FavoriteButton";
 
 interface FightCardProps {
     data: Record<string, any>
@@ -53,16 +54,15 @@ const FightCard: React.FC<FightCardProps> = ({
                     "
                     src={data.thumbnailUrl} alt="Thumbnail"/>
                     <div className="
-                    z-10
-                    bg-zinc-900
-                    p-2
-                    lg:p-4
-                    absolute
-                    w-full
-                    transition
-                    shadow-md
-                    rounded-b-md"
-                    >
+                        z-10
+                        bg-zinc-900
+                        p-2
+                        lg:p-4
+                        absolute
+                        w-full
+                        transition
+                        shadow-md
+                        rounded-b-md">
                         <div className="flex flex-row items-center gap-3">
                             <div className="
                             cursor-pointer
@@ -80,6 +80,7 @@ const FightCard: React.FC<FightCardProps> = ({
                             onClick={() => {}}>
                                 <IoPlay size={30}/>
                             </div>
+                            <FavoriteButton fightId={data?.fightId}/>
                         </div>
                     </div>
                 </div>
