@@ -54,7 +54,7 @@ const FightCard: React.FC<FightCardProps> = ({
                     src={data.thumbnailUrl} alt="Thumbnail"/>
                     <div className="
                     z-10
-                    bg-black
+                    bg-zinc-900
                     p-2
                     lg:p-4
                     absolute
@@ -67,7 +67,7 @@ const FightCard: React.FC<FightCardProps> = ({
                             <div className="
                             cursor-pointer
                             w-6
-                            h-6
+                            h-3
                             lg:w-10
                             lg:h-10
                             bg-white
@@ -79,7 +79,6 @@ const FightCard: React.FC<FightCardProps> = ({
                             hover:bg-neutral-300"
                             onClick={() => {}}>
                                 <IoPlay size={30}/>
-
                             </div>
                         </div>
                     </div>
