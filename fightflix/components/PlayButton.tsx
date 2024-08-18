@@ -11,7 +11,8 @@ const PlayButton: React.FC<PlayButtonProps> = ({ fightId }) => {
     const router = useRouter();
 
     return (
-        <div className="
+        <button 
+            className="
             bg-white
             rounded-md
             py-1 md:py-2
@@ -27,7 +28,7 @@ const PlayButton: React.FC<PlayButtonProps> = ({ fightId }) => {
             ">
                 <IoPlay size={25} className="mr-1"/>
                 Play
-        </div>
+        </button>
     )
 };
 
