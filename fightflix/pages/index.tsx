@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <InfoModal visible={isOpen} onClose={() => {}}/>
+      <InfoModal visible={isOpen} onClose={closeModal}/>
       <Navbar/>
       <Billboard/>
       <div className="pb-40">
