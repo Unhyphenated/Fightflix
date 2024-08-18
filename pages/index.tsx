@@ -7,7 +7,7 @@ import useFavorites from "@/hooks/useFavorites";
 import useFightsList from "@/hooks/useFightsList";
 import useInfoModal from "@/hooks/useInfoModal";
 import { NextPageContext } from "next";
-import { getSession, signOut } from "next-auth/react";
+import { getSession, signOut } from "@/node_modules/next-auth/react";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
