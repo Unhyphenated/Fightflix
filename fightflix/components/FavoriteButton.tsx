@@ -4,7 +4,7 @@ import React, { useCallback, useMemo } from "react";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useFavorites from "@/hooks/useFavorites";
 import { AiOutlinePlus } from "react-icons/ai";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { IoCheckmarkOutline } from "react-icons/io5";
 
 interface FavoriteButtonProps {
     fightId: string,
@@ -33,7 +33,8 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ fightId }) => {
         })
     }, [fightId, isFavorite, currentUser, mutate, mutateFavorites]);
 
-    const Icon = isFavorite ? AiOutlinePlus : IoIosCheckmarkCircleOutline;
+    const Icon = isFavorite ? AiOutlinePlus : IoCheckmarkOutline;
+    ;
 
 
     return (
