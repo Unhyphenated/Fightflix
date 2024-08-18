@@ -37,7 +37,8 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ fightId }) => {
 
 
     return (
-        <div className="
+        <div onClick={toggleFavorites} 
+        className="
             cursor-pointer
             group/item
             w-6
