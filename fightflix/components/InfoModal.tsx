@@ -80,7 +80,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                                     flex
                                     items-center
                                     justify-center"
-                                    onClick={() => {}}>
+                                    onClick={handleClose}>
                                     <IoCloseOutline className="text-white" size={20}/>
                                  </div>
 
